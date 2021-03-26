@@ -1,0 +1,217 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".DetailActivity"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarProfile"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:fitsSystemWindows="true"
+        android:background="@drawable/fondo_huevo"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        >
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="#59000000"
+            app:statusBarScrim="#59000000"
+            tools:ignore="UnusedAttribute"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="150dp"
+                android:paddingBottom="20dp"
+                android:layout_gravity="center|top"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@android:color/white"
+                    android:textSize="30dp"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#59000000"
+                tools:ignore="UnusedAttribute"
+                >
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@android:color/black"
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+            <android.support.v7.widget.CardView
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:cardView="http://schemas.android.com/apk/res-auto"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="8dp"
+                android:id="@+id/card_complete"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                card_view:cardBackgroundColor="@android:color/transparent"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="10dp"
+                        android:background="@android:color/white">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bohemian Cusine"
+                                android:textSize="22dp"
+                                android:textStyle="bold"
+                                android:onClick="showProfile"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Carne | Mediterranea"
+                                android:textSize="18dp"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_location_on_black_24dp"
+                                    />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="A 2 Km de ti"
+                                    />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="$ $ $"
+                                />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingBottom="10dp">
+
+                                <Button
+                                    android:layout_width="157dp"
+                                    android:layout_height="30dp"
+                                    android:textAllCaps="false"
+                                    android:text="Mayo"
+                                    android:background="@drawable/border_button"
+                                    android:onClick="reserve"
+                                    android:layout_gravity="center"
+                                    android:textSize="14dp"
+
+                                    />
+
+
+                                <android.support.v7.widget.RecyclerView
+                                    android:id="@+id/listMenuRecycler"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </FrameLayout>
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </FrameLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/photo"
+        android:layout_width="@dimen/dime_imagecircleprofile"
+        android:layout_height="@dimen/dime_imagecircleprofile"
+        android:layout_gravity="right|top"
+        android:layout_marginTop="170dp"
+        android:layout_marginRight="28dp"
+        android:elevation="10dp"
+        app:civ_border_color="@android:color/white"
+        app:civ_border_width="5dp"
+        android:src="@drawable/profile"
+        app:dependType="y"
+        app:dependsOn="@+id/appBarProfile"
+        app:layout_behavior="com.zoonref.SimpleViewBehavior"
+        app:dependTargetY="-180dp"
+        app:targetHeight="25dp"
+        app:targetWidth="25dp"
+        app:targetX="-70dp"
+        app:targetY="-70dp"
+        android:onClick="onClick"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/usernametoolbar_profile"
+        android:text="Bohemian Cusine"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:elevation="16dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="-100dp"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white"
+        app:layout_behavior="com.zoonref.SimpleViewBehavior"
+        app:dependsOn="@+id/photo"
+        app:dependType="y"
+        app:dependTargetY="-150dp"
+        app:targetY="70dp"
+        app:targetAlpha="1"
+        tools:ignore="MissingPrefix" />
+
+</android.support.design.widget.CoordinatorLayout>

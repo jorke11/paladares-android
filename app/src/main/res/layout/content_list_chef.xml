@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".ListChefActivity"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+            <android.support.v7.widget.SearchView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:defaultQueryHint="¿Que estas buscando?"
+                android:id="@+id/txtsearch"
+                >
+            </android.support.v7.widget.SearchView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ToggleButton
+                android:layout_width="@dimen/width_icon_filter"
+                android:layout_height="@dimen/height_icon_filter"
+                android:background="@drawable/button_custom_burger"
+                android:onClick="onClick"
+                android:text=""
+                android:textOff=""
+                android:textOn=""
+                android:id="@+id/btn_burger"
+                />
+
+            <ToggleButton
+                android:layout_width="@dimen/width_icon_filter"
+                android:layout_height="@dimen/height_icon_filter"
+                android:background="@drawable/button_custom_chicken"
+                android:onClick="onClick"
+                android:text=""
+                android:textOff=""
+                android:textOn=""
+                android:id="@+id/btn_chicken"
+                />
+
+            <ToggleButton
+                android:layout_width="@dimen/width_icon_filter"
+                android:layout_height="@dimen/height_icon_filter"
+                android:background="@drawable/button_custom_pasta"
+                android:onClick="onClick"
+                android:text=""
+                android:textOff=""
+                android:textOn=""
+                android:id="@+id/btn_pasta"
+                />
+
+            <ToggleButton
+                android:layout_width="@dimen/width_icon_filter"
+                android:layout_height="@dimen/height_icon_filter"
+                android:background="@drawable/button_custom_pizza"
+                android:onClick="onClick"
+                android:text=""
+                android:textOff=""
+                android:textOn=""
+                android:id="@+id/btn_pizza"
+                />
+        </LinearLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/chefRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
